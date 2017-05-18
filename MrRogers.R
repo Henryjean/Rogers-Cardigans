@@ -6,7 +6,7 @@ library(ggthemes)
 library(waffle)
 library(rvest)
 
-#Point to the blog post that orginially hosted the data
+#Point to the blog post that hosted the data
 url <- "https://web.archive.org/web/20110525014454/http://neighborhoodarchive.blogspot.com/2011/05/sweater-colors.html"
 
 #Snag the color codes for each episode
@@ -25,7 +25,7 @@ episodenumbers <-  url %>%
 
 episodenumbers <- as.data.frame(episodenumbers)
 
-#Create a dataframe that combines the Hex color codes with the episode numbers
+#Create a dataframe that combines the hex color codes with the episode numbers
 df <- cbind(episodenumbers, colorcodes)
 
 #Create a  variable for the year the episode aired. Source: http://www.neighborhoodarchive.com/mrn/episodes/index.html#year 
