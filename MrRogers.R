@@ -78,8 +78,10 @@ na.omit(df) %>% ggplot(aes(x=episodenumbers)) + geom_bar(aes(fill = factor(color
   theme(axis.title.y=element_blank(), axis.text.y=element_blank(), axis.ticks.y=element_blank()) + 
   theme(legend.position = "none") + ylim(0,1)
 
-#Plot the color of every sweater by frequency 
+#Count the number of times each color sweater appeared
 df <- df %>% group_by(colorcodes) %>% mutate(count = n())
+
+#Plot the sweater colors that appeared most often 
 na.omit(df) %>% ggplot(aes(reorder(colorcodes, -count), fill = colorcodes)) + geom_bar(width = .50) + 
   scale_fill_manual(values = cn) + theme_minimal() + labs(y = " ", x = " ", 
                                                           title = "Mister Rogers' Cardigans of Many Colors",
