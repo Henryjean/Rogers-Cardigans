@@ -11,7 +11,7 @@ url <- "https://web.archive.org/web/20110525014454/http://neighborhoodarchive.bl
 colorcodes <- url %>%
   read_html() %>%
   html_nodes(xpath='//*[@id="post-body-8947413617201264605"]/table/tbody/tr/td') %>%
-  html_attr("bgcolwaor")
+  html_attr("bgcolor")
 
 colorcodes <- as.data.frame(colorcodes)
 
