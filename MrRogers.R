@@ -1,10 +1,8 @@
 # Load packages
 library(rvest)
-library(ggplot2)
 library(tidyverse)
+library(ggplot2)
 library(ggthemes)
-library(waffle)
-library(rvest)
 
 #Point to the blog post that hosted the data
 url <- "https://web.archive.org/web/20110525014454/http://neighborhoodarchive.blogspot.com/2011/05/sweater-colors.html"
