@@ -35,7 +35,7 @@ p <- df %>%
   ylim(0,1) +
   labs(fill = "", x= "", 
        title = "The Many Colors of Mister Rogers Cardigans", 
-       subtitle = "Cardigan colors presented in order of apperance", 
+       subtitle = "Cardigan colors presented in order of apperance on the show", 
        caption = "") +
   theme_owen() + 
   guides(fill=guide_legend(ncol=2)) + 
