@@ -7,7 +7,7 @@ MrRogers.R details the method for scrapping [neighborhoodarchive.com](neighborho
 
 ## Update 4/10/2020 
 
-AnalysisWillFullData.R includes the code for visualizing the full dataset of cardigan colors (stored in cardigancolors.csv) dating from 1969 to 2001. 
+MrRogers1969_2002.R includes the code for visualizing the full dataset of cardigan colors (stored in cardigancolors.csv) dating from 1969 to 2001. 
 
 Colors were collected manually from [each episode](http://www.neighborhoodarchive.com/mrn/episodes/) and should be considered to be (at best) approximate matches. 
 
