@@ -4,6 +4,7 @@ library(tidyverse)
 library(ggplot2)
 library(ggthemes)
 
+
 #Point to the blog post that hosted the data
 url <- "https://web.archive.org/web/20110525014454/http://neighborhoodarchive.blogspot.com/2011/05/sweater-colors.html"
 
@@ -66,27 +67,22 @@ na.omit(df) %>% group_by(year) %>% ggplot(aes(x=year)) + geom_bar(aes(fill = fac
   geom_hline(yintercept=seq(1, 20, 1), col="white", lwd=.65) 
 
 #Plot the color of every sweater in order that they appear (1 will be omitted since Rogers wore two sweaters in one episode)
-na.omit(df) %>% ggplot(aes(x=episodenumbers)) + geom_bar(aes(fill = factor(colorcodes))) + 
-  scale_fill_manual(values = cn) + theme_minimal() + 
+na.omit(df) %>% 
+  ggplot(aes(x=episodenumbers)) + 
+  geom_bar(aes(fill = factor(colorcodes))) + 
+  scale_fill_manual(values = cn) + 
+  ylim(0,1) +
   labs(fill = "", x= "", 
-       title = "Mister Rogers' Cardigans of Many Colors", 
-       subtitle = " ", 
+       title = "The Many Colors of Mister Rogers Cardigans", 
+       subtitle = "1979 - 2001", 
        caption = "") +
+  theme_minimal() + 
   guides(fill=guide_legend(ncol=2)) + 
   scale_x_discrete(breaks = c(1466, 1761),
                    labels = c("1979", "2001")) + 
-  theme(axis.title.y=element_blank(), axis.text.y=element_blank(), axis.ticks.y=element_blank()) + 
-  theme(legend.position = "none") + ylim(0,1)
-
-#Count the number of times each color sweater appeared
-df <- df %>% group_by(colorcodes) %>% mutate(count = n())
-
-#Plot the sweater colors that appeared most often 
-na.omit(df) %>% ggplot(aes(reorder(colorcodes, -count), fill = colorcodes)) + geom_bar(width = .50) + 
-  scale_fill_manual(values = cn) + theme_minimal() + labs(y = " ", x = " ", 
-                                                          title = "Mister Rogers' Cardigans of Many Colors",
-                                                          subtitle = "Number of episodes Rogers wore each color sweater (1979 - 2001)",
-                                                          caption = "Source: neighborhoodarchive.com") + 
-  theme(legend.position = "none") + 
-  geom_hline(yintercept=seq(0, 75, 5), col="white", lwd=.45)  + 
-  theme(axis.title.x=element_blank(), axis.text.x=element_blank(), axis.ticks.x=element_blank()) 
+  theme(axis.title.y=element_blank(), 
+        axis.text.y=element_blank(), 
+        axis.ticks.y=element_blank(), 
+        legend.position = 'none', 
+        plot.title.position = 'plot', 
+        plot.title = element_text(size = 16, face = 'bold'))  + coord_fixed(ratio = 50)
