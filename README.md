@@ -7,6 +7,6 @@ Exact data was pulled from wayback machine: https://web.archive.org/web/20110525
 
 ## Update 4/10/2020 
 
-AnalysisWillFullData.R includes the code for visualizing the full dataset of cardigan colors (stored in cardigancolors.csv). Colors were collected manually from [each episode](http://www.neighborhoodarchive.com/mrn/episodes/) and are at best considered to be approximate matches. 
+AnalysisWillFullData.R includes the code for visualizing the full dataset of cardigan colors (stored in cardigancolors.csv). Colors were collected manually from [each episode](http://www.neighborhoodarchive.com/mrn/episodes/) and should be considered to be (at best) approximate matches. 
 
 ![](BarcodeChart.png)
