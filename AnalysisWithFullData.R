@@ -55,10 +55,10 @@ p <- df %>%
 p <- cowplot::ggdraw(p) + 
   theme(plot.background = element_rect(fill="floralwhite", color = NA))
 
-ggsave("BarcodeChart.png", p, width = 6, height = 2.75)
+ggsave("Charts/BarcodeChart.png", p, width = 6, height = 2.75)
 footy <- image_read("footer.png")
-graf <- image_read("BarcodeChart.png")
-image_composite(graf, footy, offset = "+0+770") %>% image_write("BarcodeChart.png")
+graf <- image_read("Charts/BarcodeChart.png")
+image_composite(graf, footy, offset = "+0+770") %>% image_write("Charts/BarcodeChart.png")
 
 
 
@@ -91,10 +91,10 @@ p <- tmp %>% filter(!is.na(colorcode)) %>%
        title = "The Many Colors of Mister Rogers Cardigans", 
        subtitle = "Total number of times each cardigan color appeared in an episode between 1969 and 2001")
 
-ggsave("BarChart.png", p,  width = 6, height = 6, dpi = 300)
+ggsave("Charts/BarChart.png", p,  width = 6, height = 6, dpi = 300)
 footy <- image_read("footer.png")
-graf <- image_read("BarChart.png")
-image_composite(graf, footy, offset = "+0+1745") %>% image_write("BarChart.png")
+graf <- image_read("Charts/BarChart.png")
+image_composite(graf, footy, offset = "+0+1745") %>% image_write("Charts/BarChart.png")
 
 
 
@@ -126,8 +126,8 @@ p <- df %>% group_by(year, colorcode) %>% tally() %>%
 p <- cowplot::ggdraw(p) + 
   theme(plot.background = element_rect(fill="floralwhite", color = NA))
 
-ggsave("waffleChart.png", p,  width = 6, height = 6, dpi = 300)
+ggsave("Charts/waffleChart.png", p,  width = 6, height = 6, dpi = 300)
 footy <- image_read("footer.png")
-graf <- image_read("waffleChart.png")
-image_composite(graf, footy, offset = "+0+1745") %>% image_write("waffleChart.png")
+graf <- image_read("Charts/waffleChart.png")
+image_composite(graf, footy, offset = "+0+1745") %>% image_write("Charts/waffleChart.png")
 
