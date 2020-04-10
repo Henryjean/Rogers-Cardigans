@@ -11,4 +11,4 @@ AnalysisWillFullData.R includes the code for visualizing the full dataset of car
 
 Colors were collected manually from [each episode](http://www.neighborhoodarchive.com/mrn/episodes/) and should be considered to be (at best) approximate matches. 
 
-![](BarcodeChart.png)
+![](Charts/BarcodeChart.png)
