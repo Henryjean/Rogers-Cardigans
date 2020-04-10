@@ -22,7 +22,11 @@ theme_owen <- function () {
     )
 }
 
-##Barcode Chart Code
+
+
+# Barcode Chart Code ------------------------------------------------------
+
+
 
 p <- df %>% 
   ggplot(aes(x=as.factor(id))) + 
@@ -57,7 +61,9 @@ graf <- image_read("BarcodeChart.png")
 image_composite(graf, footy, offset = "+0+770") %>% image_write("BarcodeChart.png")
 
 
-##Bar Chart Code
+
+# Bar Chart Code ----------------------------------------------------------
+
 
 
 tmp <- df %>% group_by(colorcode) %>% summarise(tot_cc = n())
@@ -91,7 +97,10 @@ graf <- image_read("BarChart.png")
 image_composite(graf, footy, offset = "+0+1745") %>% image_write("BarChart.png")
 
 
-##Waffle Chart Code
+
+# Waffle Chart Code -------------------------------------------------------
+
+
 
 p <- df %>% group_by(year, colorcode) %>% tally() %>% 
   ggplot(aes(fill = colorcode, values = n)) + 
@@ -113,8 +122,6 @@ p <- df %>% group_by(year, colorcode) %>% tally() %>%
        y = "Episode Appearances", 
        title = "The Many Colors of Mister Rogers Cardigans", 
        subtitle = "Each square represents the color of the cardigan worn in one episode that year")
-
-
 
 p <- cowplot::ggdraw(p) + 
   theme(plot.background = element_rect(fill="floralwhite", color = NA))
